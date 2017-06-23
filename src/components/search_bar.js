@@ -20,7 +20,7 @@ class SearchBar extends Component {
 
   onInputChange(event) {
     this.setState({ term: event.target.value })
-    // Always use this the setState function to define the state
+    // Always use this the setState function to define state
   }
 }
 
