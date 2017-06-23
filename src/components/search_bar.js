@@ -1,7 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
+// It's like doing the following:
+// const Component = React.Component;
 
-const SearchBar = () => {
-  return <input />;
-};
+class SearchBar extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { term: '' };
+  }
+  render() {
+    return (
+      <div>
+       <input
+        value={this.state.term}
+        onChange={this.onInputChange.bind(this)} />
+      </div>
+    );
+  }
+
+  onInputChange(event) {
+    this.setState({ term: event.target.value })
+    // Always use this the setState function to define the state
+  }
+}
 
 export default SearchBar;
