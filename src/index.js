@@ -6,23 +6,6 @@ import SearchBar from './components/search_bar';
 import ArticleList from './components/article_list';
 import ArticleDetail from './components/article_detail';
 
-const API_KEY = 'AIzaSyBa432OSP8pH4eu0QT8mXj_WBqQH89jp2o';
-
-function getArticles (term) {
-  // ajax request (promised based!!!)
-  var queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json?" +
-  "api-key=b9f91d369ff59547cd47b931d8cbc56b:0:74623931&q=" + term;
-  return axios({
-      method: "get",
-      url:  queryUrl
-  }).then(articles => {
-      // this.setState({ articles });
-      for (var i = 0; i < 10; i++) {
-      console.log(articles.data.response.docs[i].web_url);
-    }
-  });
-}
-
 // create a new component that creates some HTML
 class App extends Component {
   constructor(props) {
@@ -30,9 +13,28 @@ class App extends Component {
 
     this.state = { articles: [] };
 
-    getArticles('surf');
+    this.getArticles('surf');
 
   }
+
+  getArticles (term) {
+  // ajax request (promised based!!!)
+  const queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json?" +
+  "api-key=b9f91d369ff59547cd47b931d8cbc56b:0:74623931&q=" + term;
+  return axios({
+      method: "get",
+      url:  queryUrl
+  }).then(results => {
+      for (var i = 0; i < 10; i++) {
+        console.log(results.data.response.docs[i].web_url);
+      }
+      const articles  = results.data.response.docs.map(article => {
+        return article.web_url
+      });
+      this.setState({ articles });
+  });
+}
+
 
   render() {
     return (
