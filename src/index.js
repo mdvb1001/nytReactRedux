@@ -31,7 +31,7 @@ class App extends Component {
           console.log(results.data.response.docs[i].web_url);
         }
         const articles  = results.data.response.docs.map(article => {
-          return article.web_url
+          return article
         });
         this.setState({ articles });
     });
