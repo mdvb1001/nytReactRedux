@@ -13,26 +13,28 @@ class App extends Component {
 
     this.state = { articles: [] };
 
-    this.getArticles('surf');
+    const term = 'surfboards';
+
+    this.getArticles(term);
 
   }
 
   getArticles (term) {
-  // ajax request (promised based!!!)
-  const queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json?" +
-  "api-key=b9f91d369ff59547cd47b931d8cbc56b:0:74623931&q=" + term;
-  return axios({
-      method: "get",
-      url:  queryUrl
-  }).then(results => {
-      for (var i = 0; i < 10; i++) {
-        console.log(results.data.response.docs[i].web_url);
-      }
-      const articles  = results.data.response.docs.map(article => {
-        return article.web_url
-      });
-      this.setState({ articles });
-  });
+    // ajax request (promised based!!!)
+    const queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json?" +
+    "api-key=b9f91d369ff59547cd47b931d8cbc56b:0:74623931&q=" + term;
+    return axios({
+        method: "get",
+        url:  queryUrl
+    }).then(results => {
+        for (var i = 0; i < 10; i++) {
+          console.log(results.data.response.docs[i].web_url);
+        }
+        const articles  = results.data.response.docs.map(article => {
+          return article.web_url
+        });
+        this.setState({ articles });
+    });
 }
 
 
