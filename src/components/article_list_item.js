@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ArticleListItem = (proos) => {
+const ArticleListItem = (props) => {
   return <li>Article</li>
 };
 
