@@ -42,6 +42,7 @@ class App extends Component {
     return (
       <div>
         <SearchBar />
+        <ArticleDetail article={this.state.article} />
         <ArticleList articles={this.state.articles} />
       </div>
     );
