@@ -27,9 +27,9 @@ class App extends Component {
         method: "get",
         url:  queryUrl
     }).then(results => {
-        for (var i = 0; i < 10; i++) {
-          console.log(results.data.response.docs[i].web_url);
-        }
+        // for (var i = 0; i < 10; i++) {
+        //   console.log(results.data.response.docs[i].web_url);
+        // }
         const articles  = results.data.response.docs.map(article => {
           return article
         });
@@ -42,7 +42,7 @@ class App extends Component {
     return (
       <div>
         <SearchBar />
-        <ArticleDetail article={this.state.article} />
+        <ArticleDetail article={this.state.articles[0]} />
         <ArticleList articles={this.state.articles} />
       </div>
     );
