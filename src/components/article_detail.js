@@ -1,7 +1,12 @@
 import React from 'react';
 
 const ArticleDetail = (props) => {
+
   const article = props.article;
+
+  if (!article) {
+    return <div>Loading...</div>;
+  }
 
   return(
     <div className ="article-detail col-md-8">
