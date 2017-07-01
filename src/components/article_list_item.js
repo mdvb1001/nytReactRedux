@@ -2,6 +2,7 @@ import React from 'react';
 
 const ArticleListItem = (props) => {
   const article = props.article;
+  const onArticleSelect = props.onArticleSelect;
 
   console.log(article.web_url);
 
@@ -10,7 +11,7 @@ const ArticleListItem = (props) => {
   const articleURL = article.web_url; // to be included later
 
   return (
-    <li className="list-group-item">
+    <li onClick={() => onArticleSelect(article)} className="list-group-item">
         <div className="article-list media">
           <div className="media-left">
             <div className="media-object">{newsSource}</div>

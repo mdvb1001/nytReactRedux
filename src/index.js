@@ -11,7 +11,10 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { articles: [] };
+    this.state = {
+      articles: [],
+      selectedArticle: null
+      };
 
     const term = 'surfboards';
 
@@ -33,7 +36,10 @@ class App extends Component {
         const articles  = results.data.response.docs.map(article => {
           return article
         });
-        this.setState({ articles });
+        this.setState({
+          articles: articles,
+          selectedArticle: articles[0]
+        });
     });
 }
 
@@ -42,8 +48,10 @@ class App extends Component {
     return (
       <div>
         <SearchBar />
-        <ArticleDetail article={this.state.articles[0]} />
-        <ArticleList articles={this.state.articles} />
+        <ArticleDetail article={this.state.selectedArticle} />
+        <ArticleList
+          onArticleSelect={selectedArticle => this.setState({selectedArticle}) }
+          articles={this.state.articles} />
       </div>
     );
   }
