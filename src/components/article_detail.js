@@ -9,7 +9,7 @@ const ArticleDetail = (props) => {
   }
 
   return(
-    <div className ="article-detail col-md-8">
+    <div className ="article-detail">
       <div className="details">
         <div>{article.headline.main}</div>
         <div>{article.web_url}</div>

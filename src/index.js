@@ -45,7 +45,7 @@ class App extends Component {
 
 
   render() {
-    const articleSearch = _.debounce((term) => { this.articleSearch(term)} , 1000);
+    const articleSearch = _.debounce((term) => { this.articleSearch(term)} , 300);
     return (
       <div>
         <SearchBar onSearchTermChange={articleSearch} />

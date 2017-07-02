@@ -11,9 +11,9 @@ const ArticleList = (props) => {
   });
 
   return (
-    <ul className="col-md-4 list-group">
+    <div className="list-group">
       {articleItems}
-    </ul>
+    </div>
   );
 };
 
