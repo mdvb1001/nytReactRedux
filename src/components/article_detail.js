@@ -3,7 +3,6 @@ import React from 'react';
 const ArticleDetail = (props) => {
 
   const article = props.article;
-  console.log('this article: ' + article);
 
   if (!article) {
     return <div>Loading...</div>;

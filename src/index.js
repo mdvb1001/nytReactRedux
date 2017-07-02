@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
 import axios from 'axios';
 import ReactDOM from 'react-dom';
@@ -16,41 +17,41 @@ class App extends Component {
       selectedArticle: null
       };
 
-    const term = 'surfboards';
-
-    this.getArticles(term);
+    this.articleSearch('surfboards');
 
   }
 
-  getArticles (term) {
+  articleSearch(term) {
     // ajax request (promised based!!!)
     const queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json?" +
-    "api-key=b9f91d369ff59547cd47b931d8cbc56b:0:74623931&q=" + term;
+    "api-key=d4d1ec204df7441692d2d8ed2d7bccef&sort:newest&q=" + term;
     return axios({
         method: "get",
         url:  queryUrl
     }).then(results => {
-        // for (var i = 0; i < 10; i++) {
-        //   console.log(results.data.response.docs[i].web_url);
-        // }
+        for (var i = 0; i < 10; i++) {
+          console.log(results.data.response.docs[i]);
+        }
         const articles  = results.data.response.docs.map(article => {
-          return article
+          return article;
         });
         this.setState({
           articles: articles,
           selectedArticle: articles[0]
         });
     });
-}
+
+  }
 
 
   render() {
+    const articleSearch = _.debounce((term) => { this.articleSearch(term)} , 1000);
     return (
       <div>
-        <SearchBar />
+        <SearchBar onSearchTermChange={articleSearch} />
         <ArticleDetail article={this.state.selectedArticle} />
         <ArticleList
-          onArticleSelect={selectedArticle => this.setState({selectedArticle}) }
+          onArticleSelect={selectedArticle => this.setState({selectedArticle})}
           articles={this.state.articles} />
       </div>
     );

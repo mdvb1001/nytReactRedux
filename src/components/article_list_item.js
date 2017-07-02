@@ -4,7 +4,7 @@ const ArticleListItem = (props) => {
   const article = props.article;
   const onArticleSelect = props.onArticleSelect;
 
-  console.log(article.web_url);
+  // console.log(article.web_url);
 
   const newsSource = article.source;
   const headline = article.headline.main;
