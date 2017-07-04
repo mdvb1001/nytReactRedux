@@ -20,6 +20,31 @@ class App extends Component {
     this.articleSearch('surfboards');
 
   }
+  // washingtonPost() {
+  //   const wpURL = "https://newsapi.org/v1/articles?source=the-washington-post&" +
+  //   "sortBy=latest&apiKey=77a7844cebe247098d03ee3584304f88";
+  //   return axios({
+  //     method: "get",
+  //     url: wpURL
+  //   }).then(results =>
+  //   console.log('Results: ' + results));
+  // }
+  // newyorkTimes() {
+  //   const nytURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?" +
+  //   "api-key=d4d1ec204df7441692d2d8ed2d7bccef&sort:newest&q=" + term;
+  //   return axios({
+  //       method: "get",
+  //       url:  nytURL,
+  //   })
+  //   .then(results => {
+  //       for (var i = 0; i < 10; i++) {
+  //         console.log(results.data.response.docs[i]);
+  //       }
+  //       const articles  = results.data.response.docs.map(article => {
+  //         return article;
+  //       });
+  //   });
+  // }
 
   articleSearch(term) {
     // ajax request (promised based!!!)
