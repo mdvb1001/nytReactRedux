@@ -17,6 +17,9 @@ const ArticleListItem = (props) => {
             <div className="media-object">{newsSource}</div>
           </div>
           <div className="media-body">
+           {/*
+            Use this as the an example of implementing the URL as a Headline...
+           <h4><a target="_blank" href={this.props.article.web_url}>{this.props.article.headline.main}</a></h4>*/}
             <div className="media-heading" >{headline}</div>
           </div>
         </div>
