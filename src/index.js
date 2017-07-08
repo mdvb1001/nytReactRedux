@@ -17,18 +17,8 @@ class App extends Component {
       selectedArticle: null
       };
 
-    this.articleSearch('surfboards').then(this.washingtonPost());
+    this.articleSearch('surfboards');
 
-  }
-
-  washingtonPost() {
-    const wpURL = "https://newsapi.org/v1/articles?source=the-washington-post" +
-    "&sortBy=top&apiKey=0b90ce83e3df48c5aab937b54850cb9c";
-    return axios({
-      method: "get",
-      url: wpURL
-    }).then(results =>
-    console.log(results));
   }
 
   articleSearch(term) {
