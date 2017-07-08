@@ -14,13 +14,14 @@ const ArticleListItem = (props) => {
     <li onClick={() => onArticleSelect(article)} className="list-group-item">
         <div className="article-list media">
           <div className="media-left">
-            <div className="media-object">{newsSource}</div>
+          {/*<div className="media-object">{newsSource}</div>*/}
           </div>
           <div className="media-body">
            {/*
-            Use this as the an example of implementing the URL as a Headline...
            <h4><a target="_blank" href={this.props.article.web_url}>{this.props.article.headline.main}</a></h4>*/}
-            <div className="media-heading" >{headline}</div>
+            <div className="media-heading">
+              <h5>{headline}</h5>
+            </div>
           </div>
         </div>
     </li>
