@@ -17,11 +17,11 @@ class App extends Component {
       selectedArticle: null
       };
 
-    this.articleSearch('surfboards');
+    this.handleSubmit('surfboards');
 
   }
 
-  articleSearch(term) {
+  handleSubmit(term) {
     // ajax request (promised based!!!)
     const queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json?" +
     "api-key=d4d1ec204df7441692d2d8ed2d7bccef&sort:newest&q=" + term;
@@ -35,6 +35,7 @@ class App extends Component {
         const articles  = results.data.response.docs.map(article => {
           return article;
         });
+
         this.setState({
           articles: articles,
           selectedArticle: articles[0]
@@ -45,10 +46,12 @@ class App extends Component {
 
 
   render() {
-    const articleSearch = _.debounce((term) => { this.articleSearch(term)} , 300);
+    const handleSubmit =
+      _.debounce((term) => {
+      this.handleSubmit(term)} , 300);
     return (
       <div>
-        <SearchBar onSearchTermChange={articleSearch} />
+        <SearchBar onSearchTermChange={handleSubmit} />
         <ArticleDetail article={this.state.selectedArticle} />
         <ArticleList
           onArticleSelect={selectedArticle => this.setState({selectedArticle})}

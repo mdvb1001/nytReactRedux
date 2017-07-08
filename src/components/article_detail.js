@@ -19,7 +19,7 @@ const ArticleDetail = (props) => {
         <br />
         <div>{article.snippet}</div>
         <br />
-        <div>{article.pub_date}</div>
+        <div>{article.pub_date.substr(0, 10)}</div>
         <br />
         <div>{article.source}</div>
       </div>
