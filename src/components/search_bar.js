@@ -5,10 +5,10 @@ import React, { Component } from 'react';
 class SearchBar extends Component {
   constructor(props) {
     super(props);
-
-    this.state = { searchTerm: '' };
+    this.state = {
+      searchTerm: props.searchTerm,
+    };
   }
-
   handleChange = (event) => {
     const name = event.target.name;
     const obj = {};
@@ -24,10 +24,11 @@ class SearchBar extends Component {
   render() {
     return (
       <form onSubmit={event => this.handleSubmit(event)} className="search-bar">
-       <input
-        name="searchTerm"
-        value={this.state.searchTerm}
-        onChange={event => this.handleChange(event)} />
+        <input
+          name="searchTerm"
+          value={this.props.searchTerm}
+          onChange={event => this.handleChange(event)}
+        />
         <input type="submit" value="Search" />
       </form>
     );

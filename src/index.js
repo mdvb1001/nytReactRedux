@@ -53,6 +53,7 @@ class App extends Component {
     return (
       <div>
         <SearchBar
+          searchTerm={this.state.searchTerm}
           onSearchFormSubmit={() => this.handleSubmit()}
           onSearchTermChange={obj => this.handleUserInput(obj)}
         />
