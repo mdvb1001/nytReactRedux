@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import React, { Component } from 'react';
 import axios from 'axios';
 import ReactDOM from 'react-dom';
@@ -14,21 +13,27 @@ class App extends Component {
 
     this.state = {
       articles: [],
-      selectedArticle: null
-      };
+      selectedArticle: null,
+      searchTerm: 'surfboards',
+    };
 
-    this.handleSubmit('surfboards');
-
+    this.handleSubmit();
   }
 
-  handleSubmit(term) {
+  handleUserInput(obj) {
+    this.setState(obj);
+  }
+
+  handleSubmit() {
     // ajax request (promised based!!!)
     const queryUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json?" +
-    "api-key=d4d1ec204df7441692d2d8ed2d7bccef&sort:newest&q=" + term;
+                     "api-key=d4d1ec204df7441692d2d8ed2d7bccef&sort:newest&q=" +
+                     this.state.searchTerm;
     return axios({
         method: "get",
         url:  queryUrl
     }).then(results => {
+        // consider a `forEach` here
         for (var i = 0; i < 10; i++) {
           console.log(results.data.response.docs[i]);
         }
@@ -41,17 +46,16 @@ class App extends Component {
           selectedArticle: articles[0]
         });
     });
-
   }
 
 
   render() {
-    const handleSubmit =
-      _.debounce((term) => {
-      this.handleSubmit(term)} , 300);
     return (
       <div>
-        <SearchBar onSearchTermChange={handleSubmit} />
+        <SearchBar
+          onSearchFormSubmit={() => this.handleSubmit()}
+          onSearchTermChange={obj => this.handleUserInput(obj)}
+        />
         <ArticleDetail article={this.state.selectedArticle} />
         <ArticleList
           onArticleSelect={selectedArticle => this.setState({selectedArticle})}
