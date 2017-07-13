@@ -25,6 +25,7 @@ class SearchBar extends Component {
     return (
       <form onSubmit={event => this.handleSubmit(event)} className="search-bar">
         <input
+          className="input-search-bar"
           name="searchTerm"
           value={this.props.searchTerm}
           onChange={event => this.handleChange(event)}

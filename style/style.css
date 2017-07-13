@@ -1,6 +1,7 @@
 .search-bar {
   margin: 20px;
   text-align: center;
+  margin-bottom: 50px;
 }
 
 .search-button {
@@ -15,8 +16,8 @@
   margin-top: 10px;
   margin-bottom: 20px;
   padding: 10px;
-  border: 5px solid #dddeef;
-  border-radius: 0px;
+  border: 1px solid #dd0a52;
+  border-radius: 0px 60
 }
 
 .list-group-item {
@@ -24,7 +25,7 @@
 }
 
 .list-group-item:hover {
-  background-color: #eee;
+  background-color: #e5e5e5;
 }
 
 /***********************
@@ -34,7 +35,7 @@
 .btn {
   padding: 14px 24px;
   border: 0 none;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -42,21 +43,40 @@
   outline: 0 none;
 }
 
-.btn-primary {
+/*.btn-default {
   background: #0099cc;
   color: #ffffff;
-}
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-  background: #33a6cc;
-}
-.btn-primary:active, .btn-primary.active {
+}*/
+/*.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+  background: #690a52;
+}*/
+.btn-default:active, .btn-default.active {
   background: #007299;
   box-shadow: none;
 }
 .sharp {
   border-radius: 0rem;
+  border: 1px solid #e5e5e5;
+  background-color: white;
+  color: #dd0a52;
+}
+
+.sharp:hover {
+  background-color: #fdd5e3;
+  border: 1px solid #dd0a52;
+  color: #dd0a52;
 }
 
 .list-group .list-group-item {
   border-radius: 0;
+}
+
+.input-search-bar {
+  margin-bottom: 5px;
+}
+
+.main {
+  text-align: center;
+  font-weight: 500;
+  font-size: 100px;
 }
