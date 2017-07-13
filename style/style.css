@@ -1,3 +1,16 @@
+*{
+  font-family: 'Archivo Black', sans-serif;
+}
+
+a {
+  color: #dd0a52;
+}
+
+a:hover {
+  color: #dd0a52;
+  font-style: none;
+}
+
 .search-bar {
   margin: 20px;
   text-align: center;
@@ -20,6 +33,10 @@
   border-radius: 0px 60
 }
 
+/*.article-detail .details:hover {
+  border: 1px solid #dd0a52;
+}
+*/
 .list-group-item {
   cursor: pointer;
 }
@@ -50,10 +67,10 @@
 /*.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
   background: #690a52;
 }*/
-.btn-default:active, .btn-default.active {
+/*.btn-default:active, .btn-default.active {
   background: #007299;
   box-shadow: none;
-}
+}*/
 .sharp {
   border-radius: 0rem;
   border: 1px solid #e5e5e5;
