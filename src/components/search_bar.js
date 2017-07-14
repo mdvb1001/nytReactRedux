@@ -30,7 +30,7 @@ class SearchBar extends Component {
           value={this.props.searchTerm}
           onChange={event => this.handleChange(event)}
         />
-        <input className="btn btn-primary sharp" type="submit" value="Search" />
+        <input className="btn btn sharp" type="submit" value="Search" />
       </form>
     );
   }

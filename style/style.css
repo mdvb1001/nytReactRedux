@@ -8,7 +8,6 @@ a {
 
 a:hover {
   color: #dd0a52;
-  font-style: none;
 }
 
 .search-bar {
@@ -17,12 +16,13 @@ a:hover {
   margin-bottom: 50px;
 }
 
-.search-button {
+/*.search-button {
   border-radius: 0;
-}
+}*/
 
 .search-bar input {
   width: 75%;
+  text-align: center;
 }
 
 .article-detail .details {
@@ -30,7 +30,8 @@ a:hover {
   margin-bottom: 20px;
   padding: 10px;
   border: 1px solid #dd0a52;
-  border-radius: 0px 60
+  border-radius: 0px 60;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 /*.article-detail .details:hover {
@@ -60,17 +61,6 @@ a:hover {
   outline: 0 none;
 }
 
-/*.btn-default {
-  background: #0099cc;
-  color: #ffffff;
-}*/
-/*.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
-  background: #690a52;
-}*/
-/*.btn-default:active, .btn-default.active {
-  background: #007299;
-  box-shadow: none;
-}*/
 .sharp {
   border-radius: 0rem;
   border: 1px solid #e5e5e5;
@@ -78,14 +68,16 @@ a:hover {
   color: #dd0a52;
 }
 
-.sharp:hover {
+.sharp:hover, .sharp:active:focus, .sharp.active:focus {
   background-color: #fdd5e3;
   border: 1px solid #dd0a52;
   color: #dd0a52;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .list-group .list-group-item {
   border-radius: 0;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .input-search-bar {
@@ -96,4 +88,12 @@ a:hover {
   text-align: center;
   font-weight: 500;
   font-size: 100px;
+}
+
+.footer {
+  margin-top: 50px;
+}
+.footer h6 {
+  font: 10px;
+  text-align: center;
 }
