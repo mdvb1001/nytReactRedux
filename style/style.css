@@ -85,8 +85,9 @@ a:hover {
   margin-bottom: 5px;
 }
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 1800px) {
   .main {
+    margin-bottom: 40px;
     text-align: center;
     font-weight: 500;
     font-size: 100px;
@@ -95,17 +96,15 @@ a:hover {
 
 @media only screen and (max-width: 685px) {
   .main {
+    margin-bottom: 20px;
     text-align: center;
     font-weight: 500;
-    font-size: 50px;
+    font-size: 55px;
   }
 }
 
 .footer {
-  margin-top: 50px;
-}
-
-.footer h6 {
+  margin-top: 30px;
   font: 10px;
   text-align: center;
 }

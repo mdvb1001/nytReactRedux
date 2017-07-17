@@ -12,9 +12,9 @@ const ArticleDetail = (props) => {
     <div className ="article-detail">
       <div className="details">
         <div>
-          <h4>
+          <h5>
             <a href={article.web_url} target="_blank">{article.headline.main}</a>
-          </h4>
+          </h5>
         </div>
         <br />
         <div>{article.snippet}</div>

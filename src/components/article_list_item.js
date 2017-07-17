@@ -17,7 +17,7 @@ const ArticleListItem = (props) => {
           </div>
           <div className="media-body">
             <div className="media-heading">
-              <h5>{headline}</h5>
+              <h6>{headline}</h6>
             </div>
           </div>
         </div>
