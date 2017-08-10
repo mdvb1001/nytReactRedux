@@ -6,7 +6,7 @@
   "repository": "git@github.com:mdvb1001/ReactStarter.git",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "build": "webpack",
+    "build": "webpack", // this is what solved the issue of the bundle not generating...
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch"
   },
